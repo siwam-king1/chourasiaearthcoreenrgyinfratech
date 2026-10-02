@@ -1,1 +1,783 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chourasia Earthcore Energy Infratech supplies ECL, coking and non-coking coal, stone, bricks and infrastructure materials from Raniganj, West Bengal."
+    />
+    <meta name="theme-color" content="#0a0b0a" />
+    <title>Chourasia Earthcore Energy Infratech</title>
+    <style>
+      :root {
+        --bg: #0a0b0a;
+        --bg-2: #121412;
+        --panel: #101210;
+        --line: rgba(239, 233, 220, 0.14);
+        --text: #efe9dc;
+        --muted: #b8b2a1;
+        --gold: #c9b48a;
+        --gold-2: #8b7654;
+        --green: #7fa857;
+        --shadow: rgba(0, 0, 0, 0.35);
+        --max: 1200px;
+      }
 
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(10, 11, 10, 0.7);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 76px;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 1.25rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: radial-gradient(circle, rgba(201,180,138,0.35), rgba(201,180,138,0.05));
+        border: 1px solid rgba(201,180,138,0.6);
+        color: var(--gold);
+        font-weight: 700;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 26px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        color: var(--text);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .button,
+      button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 22px;
+        border: 1px solid var(--gold);
+        background: transparent;
+        color: var(--text);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: 0.25s ease;
+      }
+
+      .button:hover,
+      button:hover {
+        background: var(--gold);
+        color: #0a0b0a;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 88vh;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        background:
+          linear-gradient(180deg, rgba(10,11,10,0.2), rgba(10,11,10,0.8)),
+          url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 100%, rgba(10,11,10,0.15), rgba(10,11,10,0.9));
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 120px 0 36px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 0.7rem;
+        margin-bottom: 18px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 48px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      h1, h2, h3 {
+        margin: 0 0 14px;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 8vw, 8rem);
+        line-height: 0.92;
+        max-width: 10ch;
+      }
+
+      h2 {
+        font-size: clamp(2.3rem, 5vw, 4.5rem);
+        line-height: 1.02;
+      }
+
+      .hero-footer {
+        margin-top: 24px;
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .hero-footer p {
+        margin: 0;
+        max-width: 48ch;
+        color: var(--muted);
+      }
+
+      section {
+        padding: 100px 0;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 52px;
+        align-items: center;
+      }
+
+      .lead {
+        margin: 0 0 30px;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 36px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+      }
+
+      .stat strong {
+        display: block;
+        font-size: clamp(2.2rem, 4vw, 4rem);
+        line-height: 1;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--gold);
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .image-card {
+        position: relative;
+        min-height: 520px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #0a0b0a;
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .section-kicker {
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        font-size: 0.72rem;
+        margin-bottom: 18px;
+      }
+
+      .section-tag {
+        display: inline-block;
+        margin-top: 20px;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      .verticals {
+        background: var(--bg-2);
+      }
+
+      .vertical-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.1fr;
+        gap: 36px;
+        margin-top: 40px;
+      }
+
+      .tab-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .tab-item {
+        padding: 26px 18px 24px;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        cursor: pointer;
+        transition: 0.25s ease;
+      }
+
+      .tab-item.active {
+        border-color: var(--gold);
+        background: rgba(201,180,138,0.06);
+      }
+
+      .tab-item h3 {
+        margin: 0 0 6px;
+        font-size: clamp(2rem, 3vw, 3.2rem);
+        color: var(--muted);
+      }
+
+      .tab-item.active h3 {
+        color: var(--text);
+      }
+
+      .tab-item p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .tab-visual {
+        min-height: 520px;
+        border: 1px solid var(--line);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .tab-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+      }
+
+      .tab-visual img.active {
+        display: block;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .card {
+        background: rgba(255,255,255,0.01);
+        border: 1px solid var(--line);
+        padding: 28px 22px;
+      }
+
+      .card h3 {
+        margin-bottom: 10px;
+        font-size: clamp(1.7rem, 2vw, 2.4rem);
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .rates {
+        background: var(--bg-2);
+      }
+
+      .rate-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .rate-item {
+        background: rgba(255,255,255,0.01);
+        border: 1px solid var(--line);
+        padding: 22px 20px;
+      }
+
+      .rate-item b {
+        display: block;
+        font-size: 2rem;
+        line-height: 1;
+        color: var(--gold);
+        margin-bottom: 14px;
+      }
+
+      .rate-item span {
+        color: var(--muted);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .detail-list {
+        display: grid;
+        gap: 18px;
+        color: var(--muted);
+        margin-top: 28px;
+      }
+
+      .detail-list strong {
+        display: block;
+        color: var(--text);
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+      }
+
+      form {
+        display: grid;
+        gap: 18px;
+      }
+
+      input, textarea, select {
+        width: 100%;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        padding: 14px 0;
+        color: var(--text);
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+      }
+
+      .message {
+        min-height: 22px;
+        color: var(--gold);
+        font-size: 0.82rem;
+      }
+
+      .map {
+        margin-top: 32px;
+        height: 320px;
+        border: 1px solid var(--line);
+        overflow: hidden;
+        background: #0f110f;
+      }
+
+      .map iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        filter: grayscale(1) invert(1) brightness(0.9) contrast(1.1);
+      }
+
+      footer {
+        padding: 28px 0 48px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .floating-whatsapp {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #25d366;
+        color: #0b0c0a;
+        display: grid;
+        place-items: center;
+        z-index: 99;
+        box-shadow: 0 14px 35px rgba(37, 211, 102, 0.25);
+      }
+
+      @media (max-width: 860px) {
+        .nav-links { display: none; }
+        .grid-2,
+        .vertical-grid,
+        .contact-grid,
+        .cards,
+        .rate-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand" aria-label="Chourasia Earthcore Energy Infratech home">
+          <span class="brand-mark">C</span>
+          <span>Chourasia</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#rates">Rates</a>
+          <a href="#about">About</a>
+          <a href="#verticals">Verticals</a>
+          <a href="#supply">Supply</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="button" href="#contact">Enquire</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="eyebrow">Raniganj · West Bengal</div>
+          <h1>Strong foundations. Sustainable future.</h1>
+
+          <div class="hero-footer">
+            <p>
+              Raniganj coal supplier: ECL, non-coking and coking coal backed by stone,
+              bricks and site works for industrial and infrastructure projects.
+            </p>
+            <a class="button" href="#contact">Request a quote</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container grid-2">
+          <div>
+            <div class="section-kicker">About us</div>
+            <h2>We work where the material begins.</h2>
+            <p class="lead">
+              From the Raniganj coalfield, we source, grade and deliver ECL coal,
+              stone, bricks and earthwork materials to power plants, brick kilns,
+              industrial users and construction sites across Bengal and beyond.
+            </p>
+            <p class="lead">
+              One company covers the source, the movement and the mission: dependable
+              material supply built for speed, accountability and long-term use.
+            </p>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>3</strong>
+                <span>Business verticals</span>
+              </div>
+              <div class="stat">
+                <strong>24</strong>
+                <span>Hour dispatch desk</span>
+              </div>
+              <div class="stat">
+                <strong>5</strong>
+                <span>Core material lines</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="image-card" aria-label="Coal and infrastructure material">
+            <img
+              src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=80"
+              alt="Large industrial material handling"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="verticals" id="verticals">
+        <div class="container">
+          <div class="section-kicker">Earthcore · Energy · Infratech</div>
+          <h2>Three verticals, one supply chain.</h2>
+
+          <div class="vertical-grid">
+            <div class="tab-list" aria-label="Business verticals">
+              <div class="tab-item active" data-tab="0">
+                <h3>Earthcore</h3>
+                <p>Coal and stone sourced at the mine and graded for size and quality before loading.</p>
+              </div>
+              <div class="tab-item" data-tab="1">
+                <h3>Energy</h3>
+                <p>Steady coal supply for boilers, brick kilns and industrial plants by road and rail.</p>
+              </div>
+              <div class="tab-item" data-tab="2">
+                <h3>Infratech</h3>
+                <p>Excavation, shuttering and reinforcement for building and infrastructure sites.</p>
+              </div>
+            </div>
+
+            <div class="tab-visual" aria-live="polite">
+              <img class="active" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" alt="Industrial earthworks" />
+              <img src="https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=80" alt="Coal energy supply" />
+              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80" alt="Construction infrastructure" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="supply">
+        <div class="container">
+          <div class="section-kicker">Supply</div>
+          <h2>What we supply.</h2>
+
+          <div class="cards" style="margin-top: 36px;">
+            <article class="card">
+              <h3>Coal</h3>
+              <p>Lump and steam coal for power, kilns and industry, graded for size and quality.</p>
+            </article>
+            <article class="card">
+              <h3>Stone aggregate</h3>
+              <p>Crushed and boulder stone for roads, foundations and concrete applications.</p>
+            </article>
+            <article class="card">
+              <h3>Red bricks</h3>
+              <p>Reliable construction brick supply for residential and commercial work.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="rates" id="rates">
+        <div class="container">
+          <div class="section-kicker">Colliery rates</div>
+          <h2>Latest coal rates, on request.</h2>
+
+          <div class="rate-grid">
+            <div class="rate-item">
+              <b>₹ 5,500</b>
+              <span>Non-coking coal</span>
+            </div>
+            <div class="rate-item">
+              <b>₹ 7,200</b>
+              <span>Coking coal</span>
+            </div>
+            <div class="rate-item">
+              <b>₹ 4,900</b>
+              <span>Steam coal</span>
+            </div>
+            <div class="rate-item">
+              <b>Custom</b>
+              <span>Bulk enquiry</span>
+            </div>
+          </div>
+          <span class="section-tag">Coal rates vary by grade, quantity and dispatch location.</span>
+        </div>
+      </section>
+
+      <section id="process">
+        <div class="container">
+          <div class="section-kicker">Process</div>
+          <h2>Simple sourcing, faster movement.</h2>
+
+          <div class="cards" style="margin-top: 36px;">
+            <article class="card">
+              <h3>01 · Source</h3>
+              <p>We connect directly with coalfields and material sources in Raniganj and nearby points.</p>
+            </article>
+            <article class="card">
+              <h3>02 · Grade</h3>
+              <p>Material is checked on size, quality and suitability before dispatch.</p>
+            </article>
+            <article class="card">
+              <h3>03 · Deliver</h3>
+              <p>Timely dispatch is managed for plant, kiln, site and industrial use.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-kicker">Contact</div>
+          <h2>Tell us what you need.</h2>
+
+          <div class="contact-grid" style="margin-top: 26px;">
+            <div>
+              <div class="detail-list">
+                <div>
+                  <strong>Office</strong>
+                  Ram Bagan, Raniganj, West Bengal 713358
+                </div>
+                <div>
+                  <strong>Call us</strong>
+                  <a href="tel:+919378462324">+91 93784 62324</a><br />
+                  <a href="tel:+919586200160">+91 95862 00160</a>
+                </div>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:chourasiaearthcore@gmail.com">chourasiaearthcore@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="map" aria-label="Map to Raniganj location">
+                <iframe
+                  title="Location map to Raniganj, West Bengal"
+                  src="https://www.google.com/maps?q=Raniganj%20West%20Bengal&z=12&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+
+            <div>
+              <form id="enquiryForm">
+                <input type="text" name="name" placeholder="Your name" required />
+                <input type="email" name="email" placeholder="Email (optional)" />
+                <input type="tel" name="phone" placeholder="Phone number" required />
+                <select name="requirement" aria-label="Requirement type">
+                  <option>Coal</option>
+                  <option>Stone aggregate</option>
+                  <option>Red bricks</option>
+                  <option>Earthmoving</option>
+                  <option>Foundation works</option>
+                  <option>Other</option>
+                </select>
+                <textarea name="message" placeholder="Quantity, delivery location, timeline (optional)"></textarea>
+                <button type="submit">Send enquiry</button>
+                <div class="message" id="formMessage" aria-live="polite"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <span>Chourasia Earthcore Energy Infratech</span>
+        <span>Coal • Stone • Bricks • Infrastructure</span>
+      </div>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/919378462324?text=Hello%20Chourasia%20Earthcore%20Energy%20Infratech%2C%20I%20need%20a%20quote." aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.52 3.48A11.86 11.86 0 0 0 12.08 0C5.78 0 .63 5.15.63 11.44c0 2.02.53 3.99 1.53 5.72L.5 23.5l6.55-1.7c1.67.9 3.55 1.38 5.55 1.38h.01c6.3 0 11.37-5.15 11.37-11.46 0-3.08-1.2-5.96-3.36-8.14ZM12.08 20.94c-1.7 0-3.37-.46-4.83-1.32l-.35-.2-3.88 1.01 1.04-3.78-.22-.39A9.77 9.77 0 0 1 2.7 11.44c0-5.38 4.4-9.77 9.83-9.77 2.62 0 5.09 1.03 6.94 2.9a9.7 9.7 0 0 1 2.86 6.87c0 5.39-4.4 9.77-9.82 9.77Zm5.38-7.31c-.29-.15-1.74-.86-2.01-.96-.27-.1-.47-.15-.67.15-.2.29-.77.96-.94 1.16-.17.2-.34.22-.63.08-.29-.15-1.23-.46-2.35-1.46-.87-.78-1.47-1.74-1.64-2.04-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.66-.5h-.57c-.2 0-.52.07-.79.37-.27.29-1.04 1.02-1.04 2.48s1.06 2.87 1.2 3.07c.15.2 2.08 3.17 5.05 4.45.7.3 1.25.48 1.67.61.7.22 1.33.19 1.84.12.56-.08 1.74-.71 1.99-1.39.25-.68.25-1.27.18-1.39-.07-.12-.26-.2-.55-.35Z"/>
+      </svg>
+    </a>
+
+    <script>
+      const tabs = document.querySelectorAll('.tab-item');
+      const visuals = document.querySelectorAll('.tab-visual img');
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          const target = Number(tab.dataset.tab);
+          tabs.forEach((item) => item.classList.toggle('active', item === tab));
+          visuals.forEach((img, index) => img.classList.toggle('active', index === target));
+        });
+      });
+
+      document.getElementById('enquiryForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const formMessage = document.getElementById('formMessage');
+        formMessage.textContent = 'Thank you. Your enquiry has been noted. We will contact you shortly.';
+        this.reset();
+      });
+    </script>
+  </body>
+</html>
